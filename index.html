@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta rel="icon" type="image/x-icon" href="./favicon.ico">
+    <title>meow meow :3</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <div id="main">
+        <button onclick="document.getElementById('menu').showModal()" id="menu-btn"></button>
+        <div id="title">
+            <span>m</span><span>e</span><span>o</span><span>w</span><span>z</span><span>e</span><span>r</span><span>s</span>
+        </div>
+        <div id="image-container">
+            <img id="image" src="https://cataas.com/cat" alt="Picture of a cat" draggable="false">
+        </div>
+    </div>
+    <dialog id="menu">
+        <div>
+            <button id="close-menu-btn" onclick="document.getElementById('menu').close()">X</button>
+            <div class="flex-row">
+                <input type="checkbox" name="dark" id="dark">
+                <label for="dark">Dark mode</label>
+            </div>
+            <div class="flex-row">
+                <input type="checkbox" name="resize" id="resize">
+                <label for="resize">Resizing</label>
+            </div>
+            <div class="flex-row">
+                <input type="checkbox" name="boop-enabled" id="boop-enabled">
+                <label for="boop-enabled">Boop sound</label>
+            </div>
+            <div class="flex-row">
+                <label for="volume">Boop volume</label>
+                <input type="number" name="volume" id="volume-input" max="100" min="0">
+            </div>
+            <div class="flex-row">
+                <label for="refresh">Refresh interval (in milliseconds)</label>
+                <input type="number" name="refresh" id="refresh-input" min="0">
+            </div>
+            <button onclick="window.location.reload()">Refresh page</button>
+            <button onclick="fixShittyAnims()">Fix title animation</button>
+        </div>
+    </dialog>
+</body>
+</html>
