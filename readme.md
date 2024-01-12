@@ -21,5 +21,5 @@ credits:
 
 ---
 
-PS: the whole site might break if you unfocus for too long
+PS: the whole site might break if you unfocus for too long<br/>
 PPS: u can press space (or click the title) to open the menu
