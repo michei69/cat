@@ -15,41 +15,80 @@
     <script src="./index.js" defer></script>
 </head>
 <body>
-    <div id="main">
-        <button onclick="document.getElementById('menu').showModal()" id="menu-btn"></button>
+    <main id="main" role="main">
+        <nav role="navigation">
+            <button onclick="document.getElementById('menu').showModal()" aria-label="Open menu" id="menu-btn"></button>
+        </nav>
         <div id="title">
-            <span>m</span><span>e</span><span>o</span><span>w</span><span>z</span><span>e</span><span>r</span><span>s</span>
+            <!-- This is ugly af help xwx -->
+            <span id="title-char-1">m</span><span id="title-char-2">e</span><span id="title-char-3">o</span><span id="title-char-4">w</span><span id="title-char-5">z</span><span id="title-char-6">e</span><span id="title-char-7">r</span><span id="title-char-8">s</span>
         </div>
         <div id="image-container">
             <img id="image" src="https://cataas.com/cat" alt="Picture of a cat" draggable="false">
         </div>
-    </div>
+    </main>
     <dialog id="menu">
-        <div>
-            <button id="close-menu-btn" onclick="document.getElementById('menu').close()">X</button>
-            <div class="flex-row">
+        <nav role="navigation">
+            <button id="close-menu-btn" aria-label="Close menu" onclick="document.getElementById('menu').close()">X</button>
+        </nav>
+        <br/>
+        <main>
+            <p id="counter">You have only watched a total of 0 cats >:(</p>
+            <div>
                 <input type="checkbox" name="dark" id="dark">
                 <label for="dark">Dark mode</label>
             </div>
-            <div class="flex-row">
+            <div>
                 <input type="checkbox" name="resize" id="resize">
-                <label for="resize">Resizing</label>
+                <label for="resize">s t r e t c h</label>
             </div>
-            <div class="flex-row">
+            <div>
+                <input type="checkbox" name="resize-anim" id="resize-anim">
+                <label for="resize-anim">Resizing animation</label>
+            </div>
+            <div>
+                <input type="checkbox" name="opacity-anim" id="opacity-anim">
+                <label for="opacity-anim">Fade in/out animation</label>
+            </div>
+            <div>
                 <input type="checkbox" name="boop-enabled" id="boop-enabled">
                 <label for="boop-enabled">Boop sound</label>
             </div>
-            <div class="flex-row">
-                <label for="volume">Boop volume</label>
+            <div>
+                <input type="checkbox" name="pause-chk" id="pause-chk">
+                <label for="pause-chk">Pause</label>
+            </div>
+            <div>
+                <input type="checkbox" name="fill-chk" id="fill-chk">
+                <label for="fill-chk">Fill screen</label>
+            </div>
+            <div>
+                <label for="volume">Boop volume %</label>
                 <input type="number" name="volume" id="volume-input" max="100" min="0">
             </div>
-            <div class="flex-row">
+            <div>
+                <label for="pitch">Boop pitch %</label>
+                <input type="number" name="pitch" id="pitch-input" min="13">
+            </div>
+            <div>
                 <label for="refresh">Refresh interval (in milliseconds)</label>
                 <input type="number" name="refresh" id="refresh-input" min="0">
             </div>
+            <div>
+                <label for="opacity">Title opacity</label>
+                <input type="number" name="opacity" id="opacity-input" min="0" value="100" max="100">
+            </div>
+            <br/>
             <button onclick="window.location.reload()">Refresh page</button>
+            <button onclick="count = 0; localStorage.setItem('counter', 0)">Reset counter</button>
             <button onclick="fixShittyAnims()">Fix title animation</button>
-        </div>
+        </main>
+        <br/>
+        <footer>
+            <div class="urls">
+                <a href="https://github.com/michei69/cat">View this stupid project on GitHub &lt;3</a>
+            </div>
+        </footer>
     </dialog>
 </body>
 </html>

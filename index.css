@@ -7,6 +7,9 @@
     color: white;
     background-color: black;
 }
+.dark-text { 
+    color: white;
+}
 
 body {
     height: 100vh;
@@ -19,11 +22,16 @@ body {
     margin-right: 15vw;
 }
 
+.title-fill-screen {
+    height: 0 !important;
+}
+
 #title {
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: 3.5em;
+    transition: height .1s linear;
 }
 #title span {
     display: inline;
@@ -42,11 +50,16 @@ body {
     opacity: 0%;
 }
 
+.img-fill-screen {
+    height: 100vh !important;
+}
+
 #image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height:calc(100vh - 5em); /* add fake-margin too */
+    transition: height .1s linear;
 }
 
 #image {
@@ -54,8 +67,10 @@ body {
     max-width: 100%;
     aspect-ratio: auto;
     border-radius: 16px;
-    transition: all ease-in-out .2s;
     user-select: none;
+}
+.resize-anim {
+    transition: all ease-in-out .2s;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Marhey&display=swap');
@@ -85,7 +100,7 @@ body {
 }
 
 dialog {
-    flex-direction: column;
+    /* flex-direction: column; */
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -95,11 +110,34 @@ dialog {
     border-radius: 16px;
     transition: background-color 1s linear;
     user-select: none;
+    max-width: 100%;
+    width: fit-content;
 }
-dialog > div {
+dialog > main {
     display: flex;
     flex-direction: column;
     gap: .5em;
+}
+dialog > main div {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+dialog div.urls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+dialog > main button {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* im way too lazy to make those pretty */
+}
+a.dark-text, a.dark-text:hover, a.dark-text:active, a.dark-text::selection {
+    color: white;
+}
+a, a:hover, a:active, a::selection {
+    color: black;
 }
 
 @media (max-aspect-ratio: 1/1) {
